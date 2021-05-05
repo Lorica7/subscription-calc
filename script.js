@@ -10,12 +10,12 @@ let subDuration = 1;
 
 subTypeEl.addEventListener("change", (e) => {
     subType = e.target.value;
-    console.log(subType);
+    updateSub();
 });
 
 subDurationEl.addEventListener("change", (e) => {
     subDuration = Number(e.target.value);
-    console.log(subDuration)
+    updateSub();
 })
 
 /* Update Function */
@@ -28,8 +28,7 @@ const updateSub = () => {
         monthlyCost = 10;
     }
     let totalCost = subDuration * monthlyCost;
-   
-   
+   result.innerText = `You have chosen a ${subDuration} month plan for $${totalCost}.` 
 }
 
 updateSub();
